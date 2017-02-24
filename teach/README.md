@@ -6,15 +6,15 @@
 
 如果在coding的過程中遇到問題可以聯絡給你網址的人歐~
 
-#0. 教學大綱
+#[0. 教學大綱](#0-%E6%95%99%E5%AD%B8%E5%A4%A7%E7%B6%B1)
 
-##text01
+##[text01](#1-text01java)
 
-- jre, jdk, new project class, package, public static void, import,
+- [jre](#jre), [jdk](#jdk), [new project class](#new-project-class), [package](#package), [public static void](#public-static-void), [import](#import),
 
-- 輸出, 整數, 小數, 字串, 字元, 輸入, try catch, throw IOException, if else, for, switch, (1>2)?3:1, 
+- [輸出](#輸出), [整數](#宣告整數), [小數](#宣告小數), [字串](#宣告字串), [字元](#宣告字元), [輸入](#%E8%BC%B8%E5%85%A5-trycatch-throw-ioexception), [try catch](#%E8%BC%B8%E5%85%A5-trycatch-throw-ioexception), [throw IOException](#%E8%BC%B8%E5%85%A5-trycatch-throw-ioexception), [if else](#if-else%E9%81%B8%E6%93%87%E6%95%98%E8%BF%B0), [for](#for%E8%BF%B4%E5%9C%88), [switch](#switch%E9%81%B8%E6%93%87%E6%95%98%E8%BF%B0), [(1>2)?3:1](#%E4%B8%89%E5%85%83%E9%81%8B%E7%AE%97%E5%AD%90), 
 
-- 轉型
+- [轉型](#%E8%BD%89%E5%9E%8B)
 
 ##text02
 
@@ -33,7 +33,6 @@
 - write and read, timer
 
 #1. text01.java
-==============
 
 ##jre<p>
 
@@ -221,7 +220,6 @@ println的意思是印出+換行<p>
 > 如果輸入的不是數字, 則輸出"ERROR"(不用考慮輸入負數和小數的情況)
 
 #2. text02.java
-===============
 
 
 > ##practice:
@@ -229,7 +227,6 @@ println的意思是印出+換行<p>
 > 2. 寫一個function, 不使用return, 傳遞50進去後可以在main主程式印出1加到50的結果
 
 #3. text03.java
-===============
 
 > ##practice:
 > 1. 創造一個calss名稱為shape,裡面有變數unit=0, 計算邊長的function(內容為空)
@@ -237,14 +234,12 @@ println的意思是印出+換行<p>
 > 3. 更新繼承來的function, 使得在主程式呼叫circle和square可以順利算出邊長(unit在circle和square中分別代表半徑和一個邊的長度)
 
 #4. text04.java
-===============
 
 > ##practice:
 > 1. 創造一個頁面, 上面有兩個Label顯示食物名稱, 兩個textField給使用者輸入購買數量, 一個按鈕在按下之後可以在另外一個label顯示"您要購買X個漢堡和X個薯條"
 > 2. 創造一個頁面, 上面有一個button, 當滑鼠碰到他, 他會隨機跑到畫面的某處, 使玩家按不到他
 
 #5. text05.java
-===============
 
 > ##practice:
 > 1. 創造一個頁面有200個button, 其中50個會隨著時間變色, 其中50個會隨時間變大一定程度,再變小, 其中50個會左右跑碰到牆壁再返回, 最後50個會上下跑撞到牆壁再返回
