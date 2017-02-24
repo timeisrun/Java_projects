@@ -6,7 +6,7 @@
 
 如果在coding的過程中遇到問題可以聯絡給你網址的人歐~
 
-.. contents:: **教學指南**
+.. contents:: **Contents of this document**
    :depth: 2
    
 0. 教學大綱
