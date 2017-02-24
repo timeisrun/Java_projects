@@ -1,10 +1,18 @@
-寫教學順便練git
+#JAVA程式教學與複習
 
 ********
 
-這篇內容很淺，範圍只涵蓋LB上課會教的課程而已
+* 對作者來說的用途------寫教學順便練git和markdown
 
-如果在coding的過程中遇到問題可以聯絡給你網址的人歐~
+********
+
+這篇內容很淺，範圍只涵蓋LB上課會教的課程和一點點延伸而已
+
+如果在coding的過程中遇到問題可以聯絡我歐~
+
+如果有大神路過看到講錯的地方歡迎指證-///-
+
+********
 
 #[0. 教學大綱](#0-%E6%95%99%E5%AD%B8%E5%A4%A7%E7%B6%B1)
 
@@ -12,7 +20,7 @@
 
 - [jre](#jre), [jdk](#jdk), [new project class](#new-project-class), [package](#package), [public static void](#public-static-void), [import](#import),
 
-- [輸出](#輸出), [整數](#宣告整數), [小數](#宣告小數), [字串](#宣告字串), [字元](#宣告字元), [輸入](#%E8%BC%B8%E5%85%A5-trycatch-throw-ioexception), [try catch](#%E8%BC%B8%E5%85%A5-trycatch-throw-ioexception), [throw IOException](#%E8%BC%B8%E5%85%A5-trycatch-throw-ioexception), [if else](#if-else%E9%81%B8%E6%93%87%E6%95%98%E8%BF%B0), [for](#for%E8%BF%B4%E5%9C%88), [switch](#switch%E9%81%B8%E6%93%87%E6%95%98%E8%BF%B0), [(1>2)?3:1](#%E4%B8%89%E5%85%83%E9%81%8B%E7%AE%97%E5%AD%90), 
+- [輸出](#輸出), [整數](#宣告整數), [小數](#宣告小數), [字串](#宣告字串), [字元](#宣告字元), [輸入](#%E8%BC%B8%E5%85%A5-trycatch-throw-ioexception), [try catch](#%E8%BC%B8%E5%85%A5-trycatch-throw-ioexception), [throw IOException](#%E8%BC%B8%E5%85%A5-trycatch-throw-ioexception), [if else](#if-else%E9%81%B8%E6%93%87%E6%95%98%E8%BF%B0), [for](#for%E8%BF%B4%E5%9C%88), [switch](#switch%E9%81%B8%E6%93%87%E6%95%98%E8%BF%B0), [三元運算子](#%E4%B8%89%E5%85%83%E9%81%8B%E7%AE%97%E5%AD%90), 
 
 - [轉型](#%E8%BD%89%E5%9E%8B)
 
@@ -20,17 +28,19 @@
 
 - [陣列](#陣列), [length](#length), [new](#new), [null](#null), [函數](#函數), [return](#return), [static variable](#static-variable),
 
-##text03
+##[text03](#3-text03java)
 
-- class, static, private, protect, private不會繼承, 繼承
+- [class](#class), [static](#static), [public, protected, private](#public-protected-private), [繼承](#%E7%B9%BC%E6%89%BF), [範例](#%E7%AF%84%E4%BE%8B)
 
-##text04
+##[text04](#4-text04java)
 
 - screenwidth, frame, JPanel, JButton, font, label, textArea, textField, two of action, mouse Listener
 
-##text05
+##[text05](#5-text05java)
 
 - write and read, timer
+
+********
 
 #[1. text01.java](#1-text01java)  
 
@@ -61,7 +71,7 @@
 接著對project按右鍵新增class檔, 就是增加一個檔案可以寫你的原始碼(還有很多東西可以新增到你想指定的地方)<p>
 
 ##package<p>
-也許會有一行package在你剛new的class內容最上方, package和class是讓編譯器分辨該檔案應是和那些群組連結在一起的<p>
+也許會有一行package在你剛new的class內容最上方, package是讓編譯器分辨該檔案應是和那些群組連結在一起的, class在text03會介紹<p>
 如果編譯器分辨錯誤, 將所有檔案編譯在一起就會造成混亂, 比如變數名稱, class名稱重複, 或是不知道該去哪裡執行程式等等<p>
 
 ##public static void<p>
@@ -219,6 +229,8 @@ println的意思是印出+換行<p>
 > 如果大於1000, 輸出"數字太大了~", 小於1000則輸出"總和是XXX!!",<p>
 > 如果輸入的不是數字, 則輸出"ERROR"(不用考慮輸入負數和小數的情況)
 
+********
+
 #[2. text02.java](#2-text02java)
 
 ##陣列
@@ -238,9 +250,9 @@ a.length可以取得a陣列的大小<p>
 
 ##new
 再來說說宣告變數時用到的""new""這個詞<p>
-當一個物件宣告完並且使用完後, 如果再被new一次<p>
-他會變成一個全新的物件<p>
-而舊的物件過一段時間後會被JAVA垃圾回收機制回收, 歸還記憶體<p>	
+當一個物件(或變數)宣告完並且使用完後, 如果再被new一次<p>
+他會變成一個全新的物件(或變數)<p>
+而舊的物件(或變數)過一段時間後會被JAVA垃圾回收機制回收, 歸還記憶體<p>	
 
 	int[] a = new int[12];
 	a[0] = 5;
@@ -253,7 +265,7 @@ a.length可以取得a陣列的大小<p>
 ##null
 
 再來說說null的概念<p>
-他表示這個物件內的東西不存在或未賦值或未指向任何物件<p>
+他表示這個物件(或變數)內的東西不存在或未賦值或未指向任何記憶體位址<p>
 有時可以藉此判斷有沒有獲得值來寫判斷式<p>
 首先我們先宣告兩個陣列<p>
 
@@ -327,8 +339,7 @@ function的修飾子從剛剛的void變成int了<p>
 	System.out.println(calc3);
 	
 則執行程式會印出10+25的結果35<p>
-當然, 因為Java是物件導向程式語言<p>
-所以也可以直接將呼叫function的程式碼放在println裡面<p>
+當然, 也可以直接將呼叫function的程式碼放在println裡面<p>
 
 	System.out.println(calc(calc1, calc2));
 	
@@ -366,18 +377,198 @@ static表示此變數隨著程式執行結束而生成消滅<p>
 > 1. 寫一個function, 傳遞50進去, 可以回傳1加到50的結果回來
 > 2. 寫一個function, 不使用return, 傳遞50進去後可以在main主程式印出1加到50的結果
 
+********
+
 #[3. text03.java](#3-text03java)
 
+##class
+
+class是一種類別, 比如你的專案主程式main是寫在class裡面, 你要以.java檔定義物件也是寫在class裡面<p>
+Java做為一個物件導向語言, 將所有東西(除了變數及運算子)皆視為物件(Object) ,而Object都是用一個一個class檔去定義的<p>
+for example, 今天new一個class, 程式定義好了該Object中需要宣告的物件, 可能是各種變數, 各種function等等<p>
+再將這個Object在記憶體中的位址在程式中傳遞<p>
+所謂傳遞, 如同轉型使用的Integer.parseInt, 陣列.length取得長度, 或自己寫的function等都是在傳遞Object<p>
+想觀看除了運算子(operator)的定義, 只需要用滑鼠雙擊想觀看的部分(像是println), 右鍵, 選擇開啟宣告即可追溯定義檔(.class)<p>
+
+	System.out.println("Hello world!");
+	
+開啟println宣告
+
+	public void println(char x[]) {
+        synchronized (this) {
+            print(x);
+            newLine();
+        }
+    }
+	
+可發現println是由印出(print function) + 換行(newLine function)組成
+開啟print宣告
+
+	public void print(char s[]) {
+        write(s);
+    }
+	
+開啟write宣告
+
+	private void write(char buf[]) {
+    	//...很長   
+    }
+	
+好像扯遠了, 回來講class<p>
+我們現在來練習定義一個class<p>
+請看bmi.java檔是寫好的定義檔, 裡面宣告了4個變數和4個function<p>
+
+	int weight = 60;
+	static int height = 175;
+	
+	private int year = 20;
+	
+	protected int hey = 2;
+	
+	public void set_weight(int a) {
+		weight = a;
+	}
+	public int get_weight() {
+		return weight;
+	}
+	
+	public void set_year(int a) {
+		year = a;
+	}
+	public int get_year() {
+		return year;
+	}
+
+你可以看到我用了4個修飾子static, public, protected, private<p>
+
+##static
+static可和後面三個修飾子互相搭配, 用作靜態宣告(隨著程式運行結束而生成消滅)<p>
+如main主程式一定要static宣告, 因為他是最開始執行的class, 不以static宣告的話則JVM必須先new一個main的物件才能運行<p>
+可是JVM又找不到地方知道他要new一個main, 因為找不到main程式進入點<p>
+找不到進入點不知道要new, 不知道要new就不能運行, 所以要宣告成static, 則JVM可以直接調用main function<p>
+又比如宣告static int 變數, 則我在main裡頭不需要new一次這個變數, JVM在程式剛開始運行就已經幫我建好了, 可以直接調用<p>
+但如此就會發生一個小問題, 如果濫用static修飾子, 會對電腦造成額外負擔<p>
+因為這些變數要在剛開始運行時就要劃記憶體位置給他們, 而且程式結束前不能回收<p>
+但值得慶幸的是, 目前處理器的速度已經快到不需要特別考慮這件事了~<p>
+
+> ##tips
+> 覺得看不懂, 也可以記成new同樣型態的class會共用以static修飾之變數值<p>
+
+##public, protected, private
+* public意為公開, 可供其他class直接調用<p>
+但基於不要讓coding人員可以隨意改變Object內部參數, 造成安全性問題, 故不建議變數宣告為public(不加修飾子預設為public)<p>
+通常會寫public function來使用Object中的private變數(如同上方例子中後面四個function的示意)<p>
+* propected表示保護, private表示私人<p>
+protected與public相同, 可在其他class中隨意調用此Object(或變數)<p>
+private則不可在其他class中隨意調用此Object(或變數)<p>
+而且他們在subclass繼承(inherit)後所獲得的Object(或變數)也不同<p>
+
+##繼承
+
+	parents | child
+	public -> 任何class皆繼承為public
+	protected -> 對同package中class者為protected, 外部class則為private
+	private -> 任何class皆不可繼承, 但可透過繼承parent的public function來使用
+
+##範例
+
+又扯遠了...讓我們回到main主程式和剛剛寫好的bmi class<p>
+首先呢, 在main要這樣使用你的bmi class<p>
+
+	bmi a = new bmi();
+
+表示new了一個Object叫做a, 類型是bmi<p>
+而我們可以以點運算子(.)使用class裡面的變數與function<p>
+
+	System.out.println(a.weight+", "+a.height);
+	a.weight += 20;
+	a.height += 20;
+	System.out.println(a.weight+", "+a.height);
+	
+再來是上方tips提到的共用static變數值<p>
+
+	bmi b = new bmi();
+	System.out.println(b.weight+", "+b.height);
+	
+理論上一個新new的Object b 應該要印出(60, 175), 但為何在接著上面運算式之後會印出b會印出(60, 195)呢?<p>
+這就是因為在bmi中, 以static來修飾height的關係(簡單記就想成是共用吧~)<p>
+
+接著是
+
+	System.out.println(a.year);
+	a.year += 10;
+	
+兩行程式碼編譯器都會報錯<p>
+就是因為在bmi裡面用了private修飾year變數的關係(private = 無法直接使用)<p>
+剛剛說過的<p>
+如果要使用private的變數, 必須以public function來存取, 如下<p>
+
+	System.out.println(a.get_year());
+	a.set_year(a.get_year() + 2);
+	System.out.println(a.get_year());
+	
+則可以順利執行程式<p>
+而以protected修飾的hey, 因為是同個class中呼叫, 所以可以直接調用
+
+	System.out.println(a.hey);
+
+再來是繼承的範例<p>
+先寫個bmi_2繼承bmi class<p>
+
+	package teach;
+
+	public class bmi_2 extends bmi{
+
+		public int get_weight() {
+			return weight+10;
+		}
+
+	//	public int get_year() {
+	//		return year+10;
+	//	}
+	}
+	
+extends xxx 就是繼承的格式<p>
+回到main主程式<p>
+
+	bmi_2 c = new bmi_2();
+	System.out.print(c.weight+", ");
+	System.out.print(c.height+", ");
+	System.out.print(c.year+", ");
+	System.out.println(c.hey);
+	
+發現編譯器告訴你c.year該行不能執行, 因為year是private不可見<p>
+我們必須刪掉他v註解他v更改修飾子才能執行程式<p>
+再回到bmi_2<p>
+
+	public int get_weight() {
+		return weight+10;
+	}
+	//	public int get_year() {
+	//		return year+10;
+	//	}
+
+其中註解的地方, 本來想要override get_year function<p>
+比如說幫用bmi_2的人年紀都加10歲再return<p>
+可惜year是private, 不能修改get_year function<p>
+則該段註解掉的程式碼不能用<p>
+上方未註解部分則是因為weight變數不是private, 所以可以成功覆寫(override)get_weight function<p>
+
+	
 > ##practice:
 > 1. 創造一個calss名稱為shape,裡面有變數unit=0, 計算邊長的function(內容為空)
 > 2. 創造兩個calss分別為circle, square, 他們extends shape
 > 3. 更新繼承來的function, 使得在主程式呼叫circle和square可以順利算出邊長(unit在circle和square中分別代表半徑和一個邊的長度)
+
+********
 
 #[4. text04.java](#4-text04java)
 
 > ##practice:
 > 1. 創造一個頁面, 上面有兩個Label顯示食物名稱, 兩個textField給使用者輸入購買數量, 一個按鈕在按下之後可以在另外一個label顯示"您要購買X個漢堡和X個薯條"
 > 2. 創造一個頁面, 上面有一個button, 當滑鼠碰到他, 他會隨機跑到畫面的某處, 使玩家按不到他
+
+********
 
 #[5. text05.java](#5-text05java)
 
