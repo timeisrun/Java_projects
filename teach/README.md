@@ -16,9 +16,9 @@
 
 - [轉型](#%E8%BD%89%E5%9E%8B)
 
-##text02
+##[text02](#2-text02java)
 
-- 陣列, length, new, null, 函數, void, return, static variable,
+- [陣列](#陣列), [length](#length), [new](#new), [null](#null), [函數](#函數), [return](#return), [static variable](#static-variable),
 
 ##text03
 
@@ -32,7 +32,7 @@
 
 - write and read, timer
 
-#1. text01.java
+#[1. text01.java](#1-text01java)  
 
 ##jre<p>
 
@@ -211,7 +211,7 @@ println的意思是印出+換行<p>
     String ii = "123";
     int j = Integer.parseInt(ii);
 
-其他還有各種互相轉換方式, google上都有人列出來
+其他還有各種互相轉換方式, google上都有人列出來<p>
 
 
 > ##practice:
@@ -219,27 +219,167 @@ println的意思是印出+換行<p>
 > 如果大於1000, 輸出"數字太大了~", 小於1000則輸出"總和是XXX!!",<p>
 > 如果輸入的不是數字, 則輸出"ERROR"(不用考慮輸入負數和小數的情況)
 
-#2. text02.java
+#[2. text02.java](#2-text02java)
 
+##陣列
+
+	int[] a = new int[12];
+	int[] b = {1, 2, 3};
+	
+介紹陣列寫法, 與C語言相似<p>
+可以用第一種宣告陣列大小的方式, 宣告陣列, 如果沒設定初始值則JAVA幫自動全部歸0<p>
+第二種為宣告陣列內容的方式, 大小為3<p>
+
+##length
+
+	for(int i=0; i<a.length; i++) System.out.println(a[i]);
+	
+a.length可以取得a陣列的大小<p>
+
+##new
+再來說說宣告變數時用到的""new""這個詞<p>
+當一個物件宣告完並且使用完後, 如果再被new一次<p>
+他會變成一個全新的物件<p>
+而舊的物件過一段時間後會被JAVA垃圾回收機制回收, 歸還記憶體<p>	
+
+	int[] a = new int[12];
+	a[0] = 5;
+	System.out.println(a[0]);
+	a = new int[12];
+	System.out.println(a[0]);
+	
+如上範例會印出5下一行印出0
+
+##null
+
+再來說說null的概念<p>
+他表示這個物件內的東西不存在或未賦值或未指向任何物件<p>
+有時可以藉此判斷有沒有獲得值來寫判斷式<p>
+首先我們先宣告兩個陣列<p>
+
+	Double[] c = new Double[12];
+	String[] d = new String[12];
+
+因為只有int陣列宣告JAVA會幫你自動歸0<p>
+所以
+
+	System.out.println(c[0]);
+	System.out.println(d[0]);
+	
+會印出兩個null
+
+##函數
+
+你的main就是一個函數(function)<p>
+比如在和main同階層的地方新增一個function<p>
+
+	public static void print(String s) {
+		System.out.println("我在這!!");
+		System.out.println("而且我要印出"+s);
+	}
+	
+	
+public static void在text01解釋過了<p>
+表示此function可以被其他java檔呼叫, 表示此程式片段隨著程式執行而生成而消滅<p>
+表示此function不需回傳值<p>
+括號裡頭的string s表示此function從別的地方呼叫, 必須傳入字串型態的變數, (在此function中此傳入物件的名稱為s)<p>
+否則系統會報錯<p>
+我可以在main中呼叫此function<p>
+
+	print("今天天氣真好~");
+	
+則程式會將""今天天氣真好~""這個字串傳進去print function<p>
+並照著程式執行下去, 印出兩行字<p>
+同樣的也可以先宣告變數, 再傳進function<p>
+
+	String s = "今天下雨= =";
+	print(s);
+	
+但注意到了嗎?<p>
+我們宣告的變數s型態是string<p>
+所以才可以傳進去print function<p>
+因為你在print function那邊已經宣告了會傳入型態為string 的變數s進來<p>
+所以如下程式編譯器會報錯<p>
+
+	int num = 132;
+	print(num);
+	
+因為你的num是int型態不是string型態<p>
+
+##return
+
+既然了解了function的寫法及意義, 再來介紹return功能<p>
+
+return顧名思義就是回傳值<p>
+所以function要這樣宣告<p>
+
+	public static int calc(int a, int b) {
+		return a+b;
+	}
+	
+function的修飾子從剛剛的void變成int了<p>
+表示這個function執行完會回傳一個int回去呼叫的地方<p>
+在上方例子中也就是回傳a+b的結果回去呼叫的地方<p>
+所以可以在main中這樣呼叫<p>
+
+	int calc1 = 10, calc2 = 25;
+	int calc3 = calc(calc1, calc2);
+	System.out.println(calc3);
+	
+則執行程式會印出10+25的結果35<p>
+當然, 因為Java是物件導向程式語言<p>
+所以也可以直接將呼叫function的程式碼放在println裡面<p>
+
+	System.out.println(calc(calc1, calc2));
+	
+##static variable
+
+最後, 來說明static variable<p>
+在text02.java檔中, 在main function的上方, 有宣告兩個變數<p>
+
+	static int var1 = 0;
+	static String str1 = "";
+	
+static表示此變數隨著程式執行結束而生成消滅<p>
+故可將這當作c中全域變數的概念<p>
+我們先寫一個function<p>
+
+	public static void test_var(int a) {
+		var1 += a;
+	}
+	
+呼叫此function會將你傳入function的值加到var1這個變數之中<p>
+所以在main function寫出如下程式<p>
+
+	int e = 10;
+	System.out.println(var1);
+	test_var(e);
+	System.out.println(var1);
+	test_var(e);
+	System.out.println(var1);
+	
+雖然在main沒有運算到var1這個變數<p>
+但因為他是全域變數<p>
+所以可以在test_var function中運算<p>
 
 > ##practice:
 > 1. 寫一個function, 傳遞50進去, 可以回傳1加到50的結果回來
 > 2. 寫一個function, 不使用return, 傳遞50進去後可以在main主程式印出1加到50的結果
 
-#3. text03.java
+#[3. text03.java](#3-text03java)
 
 > ##practice:
 > 1. 創造一個calss名稱為shape,裡面有變數unit=0, 計算邊長的function(內容為空)
 > 2. 創造兩個calss分別為circle, square, 他們extends shape
 > 3. 更新繼承來的function, 使得在主程式呼叫circle和square可以順利算出邊長(unit在circle和square中分別代表半徑和一個邊的長度)
 
-#4. text04.java
+#[4. text04.java](#4-text04java)
 
 > ##practice:
 > 1. 創造一個頁面, 上面有兩個Label顯示食物名稱, 兩個textField給使用者輸入購買數量, 一個按鈕在按下之後可以在另外一個label顯示"您要購買X個漢堡和X個薯條"
 > 2. 創造一個頁面, 上面有一個button, 當滑鼠碰到他, 他會隨機跑到畫面的某處, 使玩家按不到他
 
-#5. text05.java
+#[5. text05.java](#5-text05java)
 
 > ##practice:
 > 1. 創造一個頁面有200個button, 其中50個會隨著時間變色, 其中50個會隨時間變大一定程度,再變小, 其中50個會左右跑碰到牆壁再返回, 最後50個會上下跑撞到牆壁再返回
