@@ -34,7 +34,7 @@
 
 ##[text04](#4-text04java)
 
-- screenwidth, frame, JPanel, JButton, font, label, textArea, textField, two of action, mouse Listener
+- [screenwidth](#screenwidth), [JFrame](#jframe), [JPanel](#jpanel), [JButton, Font](#jbutton--font), [JLabel](#jlabel), [TextArea](#textarea), [TextField](#textfield), [two of action](#two-of-action), [Mouse Listener](#mouse-listener)
 
 ##[text05](#5-text05java)
 
@@ -77,9 +77,11 @@
 ##public static void<p>
 剛剛在new class時, 勾選的選項意義是, 給你的這個java檔加上那一段function(可以自行試試看new class不勾選會變什麼樣子)<p>
 而這段function的意義是, 你的編譯器會將有這段function的java檔, 當作此project的進入點, 從這邊開始運行程式<p>
-其中public為公開之意, 其他檔案可呼叫此檔案的public function<p>
-static只要程式運行, 則此修飾子修飾的物件就會存在, 程式結束此物才跟著消滅, (function, 變數, 物件等等都可用此修飾子)<p>
-void為不回傳, JAVA是物件導向程式語言, 裡面所有東西, 都可視為物件, 所以表示此物件不回傳值<p>
+
+其中<p>
+* public為公開之意, 其他檔案可呼叫此檔案的public function<p>
+* static只要程式運行, 則此修飾子修飾的物件就會存在, 程式結束此物才跟著消滅, (function, 變數, 物件等等都可用此修飾子)<p>
+* void為不回傳, JAVA是物件導向程式語言, 裡面所有東西, 都可視為物件, 所以表示此物件不回傳值<p>
 
 ##import<p>
 再來是import, 跟C一樣將其他人寫好的函式庫匯入進來, 等等會用到<p>
@@ -155,11 +157,11 @@ println的意思是印出+換行<p>
 	System.out.println(buf_int);
 
 這邊有兩點需要注意:<p>
-- 1. 基本上你第一行如果是用手打而不是貼上或是從他給的提示字選的話, eclipse會在他的底下畫波浪線報錯給你<p>
+* 1. 基本上你第一行如果是用手打而不是貼上或是從他給的提示字選的話, eclipse會在他的底下畫波浪線報錯給你<p>
 這時你可將滑鼠觸碰波浪線, 顯示錯誤訊息<p>
 裡面會提示你說你的某些東西沒有import或定義, 要不要import或定義?<p>
 這時就選擇import bufferedreader, 然後你就會在這個java檔的最上方發現他幫你加了一行import了<p>
-- 2. Java有一些例外處理機制, 免得工程師的粗心讓程式無法順利執行<p>
+* 2. Java有一些例外處理機制, 免得工程師的粗心讓程式無法順利執行<p>
 在Input/Output(簡稱IO)這部分有throw IOException和try/catch兩種機制可以運用<p>
 前者會在最上方public class xxxx的後面, 加上 throw IOException,<p>
 表示說在這個class裡面發生的例外全部拋出, 但不會讓程式停滯<p>
@@ -168,6 +170,7 @@ println的意思是印出+換行<p>
 才會運行catch部分抓住這個例外, 並執行你寫在裡面的code, 也就不會讓程式停止運行了<p>
 
 ##if else選擇敘述
+
     int e = 1;
 	if(e == 1) {
 		System.out.println("e的值是1");
@@ -249,6 +252,7 @@ println的意思是印出+換行<p>
 a.length可以取得a陣列的大小<p>
 
 ##new
+
 再來說說宣告變數時用到的""new""這個詞<p>
 當一個物件(或變數)宣告完並且使用完後, 如果再被new一次<p>
 他會變成一個全新的物件(或變數)<p>
@@ -292,11 +296,10 @@ a.length可以取得a陣列的大小<p>
 	
 	
 public static void在text01解釋過了<p>
-表示此function可以被其他java檔呼叫, 表示此程式片段隨著程式執行而生成而消滅<p>
-表示此function不需回傳值<p>
+表示此function可以被其他java檔呼叫, 表示此程式片段隨著程式執行而生成而消滅, 表示此function不需回傳值<p>
 括號裡頭的string s表示此function從別的地方呼叫, 必須傳入字串型態的變數, (在此function中此傳入物件的名稱為s)<p>
 否則系統會報錯<p>
-我可以在main中呼叫此function<p>
+可以在main中呼叫此function<p>
 
 	print("今天天氣真好~");
 	
@@ -538,7 +541,7 @@ extends xxx 就是繼承的格式<p>
 	System.out.println(c.hey);
 	
 發現編譯器告訴你c.year該行不能執行, 因為year是private不可見<p>
-我們必須刪掉他v註解他v更改修飾子才能執行程式<p>
+我們必須刪掉他||註解他||更改修飾子才能執行程式<p>
 再回到bmi_2<p>
 
 	public int get_weight() {
@@ -548,13 +551,12 @@ extends xxx 就是繼承的格式<p>
 	//		return year+10;
 	//	}
 
-其中註解的地方, 本來想要override get_year function<p>
+上方未註解部分是因為weight變數不是private, 所以可以成功覆寫(override)get_weight function<p>
+註解的地方, 本來想要override get_year function<p>
 比如說幫用bmi_2的人年紀都加10歲再return<p>
 可惜year是private, 不能修改get_year function<p>
 則該段註解掉的程式碼不能用<p>
-上方未註解部分則是因為weight變數不是private, 所以可以成功覆寫(override)get_weight function<p>
 
-	
 > ##practice:
 > 1. 創造一個calss名稱為shape,裡面有變數unit=0, 計算邊長的function(內容為空)
 > 2. 創造兩個calss分別為circle, square, 他們extends shape
@@ -563,6 +565,214 @@ extends xxx 就是繼承的格式<p>
 ********
 
 #[4. text04.java](#4-text04java)
+
+好的我們要開始進入圖形化介面(GUI)的世界了<p>
+這邊採用的辦法是將你的class繼承(extends)JFrame, 則如此一來你就可以以本身new一個自己而不用額外寫class<p>
+
+	public class text04 extends JFrame {
+		...
+		static text04 frm = new text04();
+		...
+	}
+	
+至於其他的變數宣告成static主要是因為使用他的全域變數特性<p>
+不然你在main new一個button, 卻不用static修飾, 則在別的function無法找到button這個Object<p>
+
+##screenwidth
+
+	int screenwidth = (int)java.awt.Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+	
+這行程式可以取得使用者電腦的螢幕寬度<p>
+意思是說在java.awt.Toolkit這個class裡面找到getDefaultToolkit function<p>
+回傳一個toolkit, 在這個toolkit中呼叫getScreenSize function<p>
+獲得視窗大小, 在取出寬度資料(getWidth())<p>
+然後賦值給int變數screenwidth<p>
+
+##JFrame
+
+	frm.setLayout(null);
+	frm.setBounds(100,100,500,500);
+	
+這是剛剛new的JFrame的基礎設定<p>
+要用視窗化界面首先你要有個載體, 才可以放東西在螢幕上並顯示出來, 就是用JFrame<p>
+* setLayout是設定排版, 可以選擇各種排版使用, 我喜歡自己設定他們的位置所以都用null表示不用任何排版方式<p>
+* setBounds意味邊界, 要傳入4個變數到該function裡面, 分別是(x座標, y座標, 寬度, 高度)<p>
+
+再來是其他設定<p>
+
+	frm.setUndecorated(true);
+	frm.setVisible(true);
+	
+* setUndecorated意味著不要有JFrame原本自帶的選項框(可以不加這行自行看看差別)<p>
+* setVisible是設定這個JFrmae的可見性, 要讓JFrame出現在畫面上一定要寫這行, 不然不會出現JFrame<p>
+
+.
+
+	frm.addWindowListener(new WindowAdapter(){
+			public void windowClosing(WindowEvent e){
+				System.exit(0);}});
+	
+上方這段程式碼則是為了與JFrame自帶選項框呼應, 如果用了Undecorated則可以不要加這段code<p>
+意思是在按下自帶選項框的叉叉後, 會真的結束這個程式<p>
+如果不加, 卻使用自帶選項框的叉叉, 你會在工作管理員裡面見到越來越多的Binary app<p>
+可以自己體會一下(笑<p>
+
+##JPanel
+
+	pnl = new JPanel();
+	pnl.setLayout(null);
+    pnl.setBounds(0,0,500,500);
+	pnl.setBackground(Color.gray);
+	frm.add(pnl);
+	
+第二個是JPanel<p>
+JFrame的上方當然可以放東西, 但是如果要換畫面就要把現有東西移除, 再新增到JFrmae上, 過於不方便<p>
+所以JFrame上面再加上一個面板(JPanel), 拿來方便我們在程式運行時, 簡單快速的換畫面<p>
+* setBackground意思是設定pnl的背景顏色, 設為灰色<p>
+* 最後一行add意思是把pnl加到frm之上<p>
+不add就不會顯示囉~<p>
+
+##JButton & Font
+
+JButton就是按鈕, 可以搭配各種Object做出各種行為<p>	
+
+	String[] s = {"a","b","c","d","e","f","g","h","lalala","dddd","abcde"};
+	Font F0 = new Font("FangSong", Font.PLAIN, 20);
+	for(int num=0; num<s.length; num++) {
+	 	btn[num] = new JButton(s[num]);
+	   	btn[num].setBounds(0 + num*51, 0, 50, 50);
+	   	btn[num].setFont(F0);
+	   	btn[num].setBackground(Color.gray);
+	   	btn[num].setForeground(Color.white);
+	    pnl.add(btn[num]);
+	}
+
+當然創Object的時候也可以用for迴圈創建<p>
+* 在new JButton的那一行, 傳"s[num]"進去的原因是JButton有初始化設定可以接收字串並化為自己的名稱<p>
+所以在button呈現在pnl上的時候, button上方會有著你傳入的字串<p>
+而其他方法像是"setText"或"setTitle"等, 可以再改變Object上的文字<p>
+
+* setBackground 和 setForeground分別對應著設定背景顏色和設定文字顏色<p>
+* Font的宣告, 分別是(字體, 字型樣式, 大小)<p>
+其中PLAIN代表普通樣式, 也可以改成BOLD(粗體)或是ITALIC(斜體)等等<p>
+
+再來是其他敘述<p>
+
+	btn[0].setOpaque(true);
+	btn[0].setContentAreaFilled(false);
+	btn[0].setBorderPainted(false);
+
+* setOpaque意思是設定為不透明, 也就是該Object背景要不要顯示, 影響著看不看的到後方的Object<p>
+* setContentAreaFilled意思是要不要繪製背景, 與第一行類似, 但程式運行不同<p>
+* setBorderPainted設定著要不要顯示按鈕的邊界線, 請自行運行code更改boolean感受差異<p>
+
+##JLabel
+
+JLabel意味著標籤, 通常用來單純顯示文字用<p>
+
+	lab = new JLabel("今天天氣真好~");
+	lab.setFont(F0);
+	lab.setBounds(100, 100, 200, 80);
+	pnl.add(lab);
+	
+在此展現基本設定格式<p>
+
+##TextArea
+
+TextArea意味著多行輸入框<p>
+
+	txa = new TextArea("");
+	txa.setFont(F0);
+	txa.setBounds(100, 100, 200, 200);
+	pnl.add(txa);
+
+##TextField
+
+TextField意味著單行輸入框<p>
+
+	txf = new TextField("132222222222222222222222222222222222");
+	txf.setBounds(100, 210, 100, 100);
+	txf.setFont(F0);
+	pnl.add(txf);
+	
+##two of Action
+
+現在要介紹的是動作(Action)<p>
+比如針對滑鼠的動作(MouseListener), 針對其他Object做動作的動作(ActionListener)等<p>
+關於按下JButton要執行的動作可以有以下兩種定義方式<p>
+
+* 1.
+
+		btn[0].addActionListener(new ActionListener() 
+		{public void actionPerformed(ActionEvent e){ 
+			btn[0].setLocation(btn[0].getLocation().x + 10, btn[0].getLocation().y);
+		} });
+
+	第一種寫在function裡面<p>
+	意思是對於btn[0]這個物件註冊一個Action, 只要按下按鈕, 就會以setLocation function改變btn[0]的x軸座標+10單位, 而y座標照舊<p>
+
+* 2.
+
+		public void actionPerformed(ActionEvent e) {
+			JButton a =(JButton) e.getSource();
+			a.setLocation(a.getLocation().x+30, a.getLocation().y);
+		}
+	
+	第二種是將Action function寫在和main同階層的地方<p>
+	將這個class implements ActionerListenr, 表示我要實作這個Listener<p>
+
+		public class text04 extends JFrame implements ActionListener{
+			...
+		}
+
+	並在main裡面對btn註冊, 如下<p>
+
+		btn[0].addActionListener(frm);
+
+各有優缺點, 就請自行體會了~<p>
+
+##Mouse Listener
+
+最後介紹關於滑鼠的Listener<p>
+要用滑鼠的Listner比較麻煩, 除了在main裡面要註冊<p>
+
+	btn[0].addMouseListener(frm);
+
+並在class implements MouseListener<p>
+
+	public class text04 extends JFrame implements MouseListener{
+		...
+	}
+
+之外, 與main同階層的地方要把以下function(除了設定動作的lab.setText(xxx);)都加上去<p>
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO 自動產生的方法 Stub
+		lab.setText("mouse click");
+	}
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO 自動產生的方法 Stub
+		lab.setText("mouse press");
+	}
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO 自動產生的方法 Stub
+		lab.setText("mouse release");
+	}
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO 自動產生的方法 Stub
+		lab.setText("mouse enter");
+	}
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO 自動產生的方法 Stub
+		lab.setText("mouse leave");
+	}
+
+而這5個function分別撰寫了點擊, 按下, 放開, 鼠標進入, 鼠標離開所要執行的Action<p>
 
 > ##practice:
 > 1. 創造一個頁面, 上面有兩個Label顯示食物名稱, 兩個textField給使用者輸入購買數量, 一個按鈕在按下之後可以在另外一個label顯示"您要購買X個漢堡和X個薯條"
