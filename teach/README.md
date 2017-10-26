@@ -1,62 +1,58 @@
-#JAVA程式教學與複習
-
-********
-
-* 對作者來說的用途------寫教學順便練git和markdown
+<div id="0"> #JAVA程式教學與複習</div>
 
 ********
 
 這篇內容很淺，範圍只涵蓋LB上課會教的課程和一點點延伸而已
 
-如果在coding的過程中遇到問題可以聯絡我歐~
+在看的過程中遇到問題可以聯絡我歐~
 
-如果有大神路過看到講錯的地方歡迎指證-///-
+如果有大神路過看到講錯的地方歡迎指正-///-
 
 ********
 
-#[0. 教學大綱](#0-%E6%95%99%E5%AD%B8%E5%A4%A7%E7%B6%B1)
+#[0. 教學大綱](#0)
 
-##[text01](#1-text01java)
+##text01
 
 - [jre](#jre), [jdk](#jdk), [new project class](#new-project-class), [package](#package), [public static void](#public-static-void), [import](#import),
 
-- [輸出](#輸出), [整數](#宣告整數), [小數](#宣告小數), [字串](#宣告字串), [字元](#宣告字元), [輸入](#%E8%BC%B8%E5%85%A5-trycatch-throw-ioexception), [try catch](#%E8%BC%B8%E5%85%A5-trycatch-throw-ioexception), [throw IOException](#%E8%BC%B8%E5%85%A5-trycatch-throw-ioexception), [if else](#if-else%E9%81%B8%E6%93%87%E6%95%98%E8%BF%B0), [for](#for%E8%BF%B4%E5%9C%88), [switch](#switch%E9%81%B8%E6%93%87%E6%95%98%E8%BF%B0), [三元運算子](#%E4%B8%89%E5%85%83%E9%81%8B%E7%AE%97%E5%AD%90), 
+- [輸出](#輸出), [整數](#宣告整數), [小數](#宣告小數), [字串](#宣告字串), [字元](#declare-char), [輸入](#input), [try catch](#input), [throw IOException](#input), [if else](#if-else), [for](#for-loop), [switch](#switch), [三元運算子](#three), 
 
-- [轉型](#%E8%BD%89%E5%9E%8B)
+- [轉型](#change-type)
 
-##[text02](#2-text02java)
+##text02
 
 - [陣列](#陣列), [length](#length), [new](#new), [null](#null), [函數](#函數), [return](#return), [static variable](#static-variable),
 
-##[text03](#3-text03java)
+##text03
 
-- [class](#class), [static](#static), [public, protected, private](#public-protected-private), [繼承](#%E7%B9%BC%E6%89%BF), [範例](#%E7%AF%84%E4%BE%8B)
+- [class](#class), [static](#static), [public, protected, private](#ppp), [繼承](#inherit), [範例](#example)
 
-##[text04](#4-text04java)
+##text04
 
-- [screenwidth](#screenwidth), [JFrame](#jframe), [JPanel](#jpanel), [JButton, Font](#jbutton--font), [JLabel](#jlabel), [TextArea](#textarea), [TextField](#textfield), [two of action](#two-of-action), [Mouse Listener](#mouse-listener)
+- [screenwidth](#screenwidth), [JFrame](#jframe), [JPanel](#jpanel), [JButton, Font](#jbutton-font), [JLabel](#jlabel), [TextArea](#textarea), [TextField](#textfield), [two of action](#two-of-action), [Mouse Listener](#mouse-listener)
 
-##[text05](#5-text05java)
+##text05
 
 - [write](#write), [read](#read), [timer](#timer)
 
 ********
 
-#[1. text01.java](#1-text01java)  
+#[1. text01.java](#0)
 
-##jre<p>
+<div id="jre">##jre<p></div>
 
     JAVA運行環境(JAVA running environment), 這是JAVA通行各種OS(作業系統)的基礎
 
-##jdk<p>
+<div id="jdk">##jdk<p><div>
 
-    JAVA開發套件(JAVA development kit), 一般使用者不需, 但程師開發者需要此物來協助compile和debug
-
+	JAVA開發套件(JAVA development kit), 一般使用者不需, 但程式開發者需要此物來協助compile和debug
+	
 好的 以上是最基礎要知道的名詞意義<p>
 
 至於JAVAHOME變數我沒在用就不介紹了哈哈哈<p>
 
-##new project class<p>
+<div id="new-project-class">##new project class<p></div>
 首先我們要先開啟新專案, 才能在裡面coding然後送給編譯器編譯<p>
 請先啟動你的eclipse<p>
 
@@ -70,27 +66,27 @@
 新增完後eclipse會幫你建好檔案內容, 比如說裝著原始碼的src資料夾, 裝編譯完後.class檔存放的bin資料夾等等<p>
 接著對project按右鍵新增class檔, 就是增加一個檔案可以寫你的原始碼(還有很多東西可以新增到你想指定的地方)<p>
 
-##package<p>
+<div id="package">##package<p></div>
 也許會有一行package在你剛new的class內容最上方, package是讓編譯器分辨該檔案應是和那些群組連結在一起的, class在text03會介紹<p>
 如果編譯器分辨錯誤, 將所有檔案編譯在一起就會造成混亂, 比如變數名稱, class名稱重複, 或是不知道該去哪裡執行程式等等<p>
 
-##public static void<p>
+<div id="public-static-void">##public static void<p></div>
 剛剛在new class時, 勾選的選項意義是, 給你的這個java檔加上那一段function(可以自行試試看new class不勾選會變什麼樣子)<p>
 而這段function的意義是, 你的編譯器會將有這段function的java檔, 當作此project的進入點, 從這邊開始運行程式<p>
 
 其中<p>
 * public為公開之意, 其他檔案可呼叫此檔案的public function<p>
-* static只要程式運行, 則此修飾子修飾的物件就會存在, 程式結束此物才跟著消滅, (function, 變數, 物件等等都可用此修飾子)<p>
-* void為不回傳, JAVA是物件導向程式語言, 裡面所有東西, 都可視為物件, 所以表示此物件不回傳值<p>
+* static只要程式運行, 則此修飾子修飾的成員就會存在, 程式結束此物才跟著消滅, (function, 變數等等成員都可用此修飾子)<p>
+* void為不回傳, 表示此function不回傳值<p>
 
-##import<p>
+<div id="import">##import<p></div>
 再來是import, 跟C一樣將其他人寫好的函式庫匯入進來, 等等會用到<p>
 
 > ## Tips
 > Ctrl + 斜線可整行(整段)註解或反註解<p>
 > 在eclipse中 Ctrl + F11 可編譯並執行
 
-##輸出<p>
+<div id="輸出">##輸出<p></div>
 
 接著請先打開text01.java檔, 邊看裡面程式碼邊學~<p>
 
@@ -106,7 +102,7 @@ println的意思是印出+換行<p>
 
     System.out.println("這會換行~\n然後變成下一行~");
     
-##宣告整數<p>
+<div id="宣告整數">##宣告整數<p></div>
 
     int a = 21;
 
@@ -114,22 +110,22 @@ println的意思是印出+換行<p>
 
     System.out.println(a);
     
-##四則運算<p>
+<div id="">##四則運算<p></div>
 
 也可在輸出中做運算
 
     int num = 10, ber = 31;
     System.out.println(num + ber);
 
-##宣告小數<p>
+<div id="宣告小數">##宣告小數<p></div>
 
     Double b = 123.456;
     
-##宣告字串<p>
+<div id="宣告字串">##宣告字串<p></div>
 
     String c = "小明";
     
-##字串中的相加<p>
+<div id="string-plus">##字串中的相加<p></div>
 
     System.out.println("你好, "+c+"初次見面。");
 
@@ -137,14 +133,13 @@ println的意思是印出+換行<p>
 
     System.out.printf("你好, %s初次見面。\n", c);
     
-##宣告字元<p>
+<div id="declare-char">##宣告字元<p></div>
 
     char d = 'a';
     
-##輸入, try/catch, throw IOException<p>
+<div id="input">##輸入, try/catch, throw IOException<p></div>
 
-輸入有scanner或bufferedreader等, 我都是用bufferedreader<p>
-不過之後沒人在讓你輸入東西的, 所以只要稍微了解就好<p>
+輸入有scanner或bufferedreader, 如下<p>
 
     BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 	String buf_int = "aasdfasdf";
@@ -155,6 +150,14 @@ println的意思是印出+換行<p>
 		exce.printStackTrace();
 	}
 	System.out.println(buf_int);
+
+scanner樣式<p>
+
+	Scanner scn = new Scanner(System.in);
+	int num = scn.nextInt();
+	String str = scn.nextLine();
+		
+	while(scn.hasNext()) System.out.println(scn.nextLine());
 
 這邊有兩點需要注意:<p>
 * 1. 基本上你第一行如果是用手打而不是貼上或是從他給的提示字選的話, eclipse會在他的底下畫波浪線報錯給你<p>
@@ -169,7 +172,7 @@ println的意思是印出+換行<p>
 則程式一般情況會執行try裡面的程式, 只有在try裡面的程式出現了Exception,<p>
 才會運行catch部分抓住這個例外, 並執行你寫在裡面的code, 也就不會讓程式停止運行了<p>
 
-##if else選擇敘述
+<div id="if-else">##if else選擇敘述</div>
 
     int e = 1;
 	if(e == 1) {
@@ -187,7 +190,7 @@ println的意思是印出+換行<p>
 	else if(e == 2) System.out.println("e的值是2");
 	else System.out.println("e的值是"+e);
     
-##for迴圈
+<div id="for-loop">##for迴圈</div>
 
     for( int i=0; i<3; i++) {
 		System.out.println(i);
@@ -195,7 +198,7 @@ println的意思是印出+換行<p>
 
 也是基礎知識, 不再贅述<p>
 
-##switch選擇敘述
+<div id="switch">##switch選擇敘述</div>
 
     int f = 5;
 	switch(f) {
@@ -209,7 +212,7 @@ println的意思是印出+換行<p>
     
 這邊注意的是break必須在每個case的最後使用, 否則會執行到switch結尾或遇到break才離開<p>
 
-##三元運算子
+<div id="three">##三元運算子</div>
 
     int g = 1;
 	int h = (g == 1) ? 2 : 3;
@@ -219,7 +222,7 @@ println的意思是印出+換行<p>
 格式意義為 (邏輯敘述) ? 前者為真 : 前者為假;<p>
 所以上方例子, 程式會印出2<p>
 
-##轉型
+<div id="change-type">##轉型</div>
 
     String ii = "123";
     int j = Integer.parseInt(ii);
@@ -234,29 +237,29 @@ println的意思是印出+換行<p>
 
 ********
 
-#[2. text02.java](#2-text02java)
+#[2. text02.java](#0)
 
-##陣列
+<div id="陣列">##陣列</div>
 
 	int[] a = new int[12];
 	int[] b = {1, 2, 3};
 	
 介紹陣列寫法, 與C語言相似<p>
-可以用第一種宣告陣列大小的方式, 宣告陣列, 如果沒設定初始值則JAVA幫自動全部歸0<p>
+可以用第一種宣告陣列大小的方式, 宣告陣列, 如果沒設定初始值則JAVA會自動全部歸0<p>
 第二種為宣告陣列內容的方式, 大小為3<p>
 
-##length
+<div id="length">##length</div>
 
 	for(int i=0; i<a.length; i++) System.out.println(a[i]);
 	
 a.length可以取得a陣列的大小<p>
 
-##new
+<div id="new">##new</div>
 
 再來說說宣告變數時用到的""new""這個詞<p>
-當一個物件(或變數)宣告完並且使用完後, 如果再被new一次<p>
-他會變成一個全新的物件(或變數)<p>
-而舊的物件(或變數)過一段時間後會被JAVA垃圾回收機制回收, 歸還記憶體<p>	
+當一個成員(或變數)宣告完並且使用完後, 如果再被new一次<p>
+他會變成一個全新的成員(或變數)<p>
+而舊的成員(或變數)過一段時間後會被JAVA垃圾回收機制回收, 歸還記憶體<p>	
 
 	int[] a = new int[12];
 	a[0] = 5;
@@ -266,10 +269,10 @@ a.length可以取得a陣列的大小<p>
 	
 如上範例會印出5下一行印出0
 
-##null
+<div id="null">##null</div>
 
 再來說說null的概念<p>
-他表示這個物件(或變數)內的東西不存在或未賦值或未指向任何記憶體位址<p>
+他表示這個成員(或變數)內的東西不存在或未賦值或未指向任何記憶體位址<p>
 有時可以藉此判斷有沒有獲得值來寫判斷式<p>
 首先我們先宣告兩個陣列<p>
 
@@ -284,7 +287,7 @@ a.length可以取得a陣列的大小<p>
 	
 會印出兩個null
 
-##函數
+<div id="函數">##函數</div>
 
 你的main就是一個函數(function)<p>
 比如在和main同階層的地方新增一個function<p>
@@ -297,7 +300,7 @@ a.length可以取得a陣列的大小<p>
 	
 public static void在text01解釋過了<p>
 表示此function可以被其他java檔呼叫, 表示此程式片段隨著程式執行而生成而消滅, 表示此function不需回傳值<p>
-括號裡頭的string s表示此function從別的地方呼叫, 必須傳入字串型態的變數, (在此function中此傳入物件的名稱為s)<p>
+括號裡頭的string s表示此function從別的地方呼叫, 必須傳入字串型態的變數, (在此function中此傳入變數的名稱為s, 型態為string)<p>
 否則系統會報錯<p>
 可以在main中呼叫此function<p>
 
@@ -313,7 +316,7 @@ public static void在text01解釋過了<p>
 但注意到了嗎?<p>
 我們宣告的變數s型態是string<p>
 所以才可以傳進去print function<p>
-因為你在print function那邊已經宣告了會傳入型態為string 的變數s進來<p>
+因為你在print function那邊已經宣告了會傳入型態為string的變數s進來<p>
 所以如下程式編譯器會報錯<p>
 
 	int num = 132;
@@ -321,7 +324,7 @@ public static void在text01解釋過了<p>
 	
 因為你的num是int型態不是string型態<p>
 
-##return
+<div id="return">##return</div>
 
 既然了解了function的寫法及意義, 再來介紹return功能<p>
 
@@ -346,7 +349,7 @@ function的修飾子從剛剛的void變成int了<p>
 
 	System.out.println(calc(calc1, calc2));
 	
-##static variable
+<div id="static-variable">##static variable</div>
 
 最後, 來說明static variable<p>
 在text02.java檔中, 在main function的上方, 有宣告兩個變數<p>
@@ -382,15 +385,12 @@ static表示此變數隨著程式執行結束而生成消滅<p>
 
 ********
 
-#[3. text03.java](#3-text03java)
+#[3. text03.java](#0)
 
-##class
+<div id="class">##class</div>
 
-class是一種類別, 比如你的專案主程式main是寫在class裡面, 你要以.java檔定義物件也是寫在class裡面<p>
-Java做為一個物件導向語言, 將所有東西(除了變數及運算子)皆視為物件(Object) ,而Object都是用一個一個class檔去定義的<p>
-for example, 今天new一個class, 程式定義好了該Object中需要宣告的物件, 可能是各種變數, 各種function等等<p>
-再將這個Object在記憶體中的位址在程式中傳遞<p>
-所謂傳遞, 如同轉型使用的Integer.parseInt, 陣列.length取得長度, 或自己寫的function等都是在傳遞Object<p>
+class是一種類別, 比如你的專案主程式main是寫在class裡面, 你要以.java檔定義成員也是寫在class裡面<p>
+for example, 今天new一個class, 程式定義好了該class中需要宣告的成員, 可能是各種變數, 各種function等等<p>
 想觀看除了運算子(operator)的定義, 只需要用滑鼠雙擊想觀看的部分(像是println), 右鍵, 選擇開啟宣告即可追溯定義檔(.class)<p>
 
 	System.out.println("Hello world!");
@@ -414,8 +414,8 @@ for example, 今天new一個class, 程式定義好了該Object中需要宣告的
 開啟write宣告
 
 	private void write(char buf[]) {
-    	//...很長   
-    }
+		//...很長   
+	}
 	
 好像扯遠了, 回來講class<p>
 我們現在來練習定義一個class<p>
@@ -444,36 +444,36 @@ for example, 今天new一個class, 程式定義好了該Object中需要宣告的
 
 你可以看到我用了4個修飾子static, public, protected, private<p>
 
-##static
+<div id="static">##static</div>
 static可和後面三個修飾子互相搭配, 用作靜態宣告(隨著程式運行結束而生成消滅)<p>
-如main主程式一定要static宣告, 因為他是最開始執行的class, 不以static宣告的話則JVM必須先new一個main的物件才能運行<p>
+如main主程式一定要static宣告, 因為他是最開始執行的class, 不以static宣告的話則JVM必須先new一個main的function才能運行<p>
 可是JVM又找不到地方知道他要new一個main, 因為找不到main程式進入點<p>
 找不到進入點不知道要new, 不知道要new就不能運行, 所以要宣告成static, 則JVM可以直接調用main function<p>
 又比如宣告static int 變數, 則我在main裡頭不需要new一次這個變數, JVM在程式剛開始運行就已經幫我建好了, 可以直接調用<p>
 但如此就會發生一個小問題, 如果濫用static修飾子, 會對電腦造成額外負擔<p>
 因為這些變數要在剛開始運行時就要劃記憶體位置給他們, 而且程式結束前不能回收<p>
-但值得慶幸的是, 目前處理器的速度已經快到不需要特別考慮這件事了~<p>
+但值得慶幸的是, 目前處理器的速度和記憶體的容量已經進步到不需要特別考慮這些事了~<p>
 
 > ## Tips
-> 覺得看不懂, 也可以記成new同樣型態的class會共用以static修飾之變數值<p>
+> 覺得看不懂, 也可以記成new出來的多個相同class會共用以static修飾之變數值<p>
 
-##public, protected, private
+<div id="ppp">##public, protected, private</div>
 * public意為公開, 可供其他class直接調用<p>
-但基於不要讓coding人員可以隨意改變Object內部參數, 造成安全性問題, 故不建議變數宣告為public(不加修飾子預設為public)<p>
+但基於不要讓coding人員可以隨意改變class內部參數, 造成安全性問題, 故不建議變數宣告為public(不加修飾子預設為public)<p>
 通常會寫public function來使用Object中的private變數(如同上方例子中後面四個function的示意)<p>
-* propected表示保護, private表示私人<p>
-protected與public相同, 可在其他class中隨意調用此Object(或變數)<p>
-private則不可在其他class中隨意調用此Object(或變數)<p>
-而且他們在subclass繼承(inherit)後所獲得的Object(或變數)也不同<p>
+* protected表示保護, private表示私人<p>
+protected與public可在其他class中隨意調用此成員<p>
+private則不可在其他class中隨意調用此成員<p>
+而且他們在subclass繼承(inherit)後所獲得的成員也不同<p>
 
-##繼承
+<div id="inherit">##繼承</div>
 
 	parents | child
 	public -> 任何class皆繼承為public
 	protected -> 對同package中class者為protected, 外部class則為private
 	private -> 任何class皆不可繼承, 但可透過繼承parent的public function來使用
 
-##範例
+<div id="example">##範例</div>
 
 又扯遠了...讓我們回到main主程式和剛剛寫好的bmi class<p>
 首先呢, 在main要這樣使用你的bmi class<p>
@@ -493,7 +493,7 @@ private則不可在其他class中隨意調用此Object(或變數)<p>
 	bmi b = new bmi();
 	System.out.println(b.weight+", "+b.height);
 	
-理論上一個新new的Object b 應該要印出(60, 175), 但為何在接著上面運算式之後會印出b會印出(60, 195)呢?<p>
+理論上一個新new的class b 應該要印出(60, 175), 但為何在接著上面運算式之後會印出b會印出(60, 195)呢?<p>
 這就是因為在bmi中, 以static來修飾height的關係(簡單記就想成是共用吧~)<p>
 
 接著是
@@ -564,7 +564,7 @@ extends xxx 就是繼承的格式<p>
 
 ********
 
-#[4. text04.java](#4-text04java)
+#[4. text04.java](#0)
 
 好的我們要開始進入圖形化介面(GUI)的世界了<p>
 這邊採用的辦法是將你的class繼承(extends)JFrame, 則如此一來你就可以以本身new一個自己而不用額外寫class<p>
@@ -578,7 +578,7 @@ extends xxx 就是繼承的格式<p>
 至於其他的變數宣告成static主要是因為使用他的全域變數特性<p>
 不然你在main new一個button, 卻不用static修飾, 則在別的function無法找到button這個Object<p>
 
-##screenwidth
+<div id="screenwidth">##screenwidth</div>
 
 	int screenwidth = (int)java.awt.Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 	
@@ -588,7 +588,7 @@ extends xxx 就是繼承的格式<p>
 獲得視窗大小, 在取出寬度資料(getWidth())<p>
 然後賦值給int變數screenwidth<p>
 
-##JFrame
+<div id="jframe">##JFrame</div>
 
 	frm.setLayout(null);
 	frm.setBounds(100,100,500,500);
@@ -617,7 +617,7 @@ extends xxx 就是繼承的格式<p>
 如果不加, 卻使用自帶選項框的叉叉, 你會在工作管理員裡面見到越來越多的Binary app<p>
 可以自己體會一下(笑<p>
 
-##JPanel
+<div id="jpanel">##JPanel</div>
 
 	pnl = new JPanel();
 	pnl.setLayout(null);
@@ -632,7 +632,7 @@ JFrame的上方當然可以放東西, 但是如果要換畫面就要把現有東
 * 最後一行add意思是把pnl加到frm之上<p>
 不add就不會顯示囉~<p>
 
-##JButton & Font
+<div id="jbutton-font">##JButton & Font</div>
 
 JButton就是按鈕, 可以搭配各種Object做出各種行為<p>	
 
@@ -666,7 +666,7 @@ JButton就是按鈕, 可以搭配各種Object做出各種行為<p>
 * setContentAreaFilled意思是要不要繪製背景, 與第一行類似, 但程式運行不同<p>
 * setBorderPainted設定著要不要顯示按鈕的邊界線, 請自行運行code更改boolean感受差異<p>
 
-##JLabel
+<div id="jlabel">##JLabel</div>
 
 JLabel意味著標籤, 通常用來單純顯示文字用<p>
 
@@ -677,7 +677,7 @@ JLabel意味著標籤, 通常用來單純顯示文字用<p>
 	
 在此展現基本設定格式<p>
 
-##TextArea
+<div id="textarea">##TextArea</div>
 
 TextArea意味著多行輸入框<p>
 
@@ -686,7 +686,7 @@ TextArea意味著多行輸入框<p>
 	txa.setBounds(100, 100, 200, 200);
 	pnl.add(txa);
 
-##TextField
+<div id="textfield">##TextField</div>
 
 TextField意味著單行輸入框<p>
 
@@ -695,7 +695,7 @@ TextField意味著單行輸入框<p>
 	txf.setFont(F0);
 	pnl.add(txf);
 	
-##two of Action
+<div id="two-of-action">##two of Action</div>
 
 現在要介紹的是動作(Action)<p>
 比如針對滑鼠的動作(MouseListener), 針對其他Object做動作的動作(ActionListener)等<p>
@@ -731,7 +731,7 @@ TextField意味著單行輸入框<p>
 
 各有優缺點, 就請自行體會了~<p>
 
-##Mouse Listener
+<div id="mouse-listener">##Mouse Listener</div>
 
 最後介紹關於滑鼠的Listener<p>
 要用滑鼠的Listner比較麻煩, 除了在main裡面要註冊<p>
@@ -780,12 +780,12 @@ TextField意味著單行輸入框<p>
 
 ********
 
-#[5. text05.java](#5-text05java)
+#[5. text05.java](#0)
 
 最後一章, 要來講解寫檔(write), 讀檔(read), 和計時器(timer)<p>
 通常我使用的時候都是複製格式, 修改裡面內容使用~<p>
 
-##write
+<div id="write">##write</div>
 
 	try {
 		String str;
@@ -808,7 +808,7 @@ Buffered是緩衝區的意思, 所以在使用完這個緩衝區(bfw)之後要�
 雖然系統過一段時間會自行釋放該記憶體位置, 不過建議還是養成良好習慣手動釋放<p>
 * 檔案內容有時會有換下一行的情況, 則只要使用第7行的newLine function, 接下來繼續寫入的內容就會換一行<p>
 
-##read
+<div id="read">##read</div>
 
 	try {
 		String str;
@@ -833,7 +833,7 @@ bfr先取得目前檔案中的這一行, 賦值給str變數<p>
 則如果str變數不為null, 執行此while迴圈<p>
 執行完後會繼續readLine下一行<p>
 
-##timer
+<div id="timer">##timer</div>
 
 	Timer timer = new Timer(1, null);
 	timer = new Timer(1000, new ActionListener() {

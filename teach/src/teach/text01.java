@@ -1,5 +1,7 @@
 package teach;
 
+import java.util.Scanner;
+
 public class text01 {
 
 	public static void main(String[] args) {
@@ -47,15 +49,11 @@ public class text01 {
 //		System.out.println(d);
 		
 //		//輸入
-//		BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
-//		String buf_int = "aasdfasdf";
-//		try {
-//			buf_int = buf.readLine();
-//		} catch (IOException exce) {
-//			// TODO 自動產生的 catch 區塊
-//			exce.printStackTrace();
-//		}
-//		System.out.println(buf_int);
+		Scanner scn = new Scanner(System.in);
+		int num = scn.nextInt();
+		String str = scn.nextLine();
+		
+		while(scn.hasNext()) System.out.println(scn.nextLine());
 		
 //		//if的用法以及關於省略大括號
 //		int e = 1;
@@ -92,13 +90,13 @@ public class text01 {
 //		int h = (g == 1) ? 2 : 3;
 //		System.out.println(h);
 		
-//		//轉型
-//		String ii = "123";
-//		System.out.println(ii + 1);
-//		System.out.println(ii + (1+3));
+		//轉型
+		String ii = "123";
+		System.out.println(ii + 1);
+		System.out.println(ii + (1+3));
 		
-//		int j = Integer.parseInt(ii);
-//		System.out.println(j + 1);
+		int j = Integer.parseInt(ii);
+		System.out.println(j + 1);
 		
 		//practice example
 		int k = 0;

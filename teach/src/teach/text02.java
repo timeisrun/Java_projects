@@ -7,8 +7,8 @@ public class text02 {
 	
 	public static void main(String[] args) {
 //		//array
-//		int[] a = new int[12];
-//		int[] b = {1, 2, 3};
+		int[] a = new int[12];
+		int[] b = {1, 2, 3};
 		
 //		System.out.println(a[0]);
 //		System.out.println(b[0]);
@@ -29,12 +29,12 @@ public class text02 {
 //		//null
 //		System.out.println(c[0]);
 //		System.out.println(d[0]);
-		
+//		
 //		if(c[0] == null) System.out.println("Nothing in c.");
 //		else System.out.println("There have something!!");
 		
 //		//function
-//		print("今天天氣真好~");
+		print("今天天氣真好~");
 		
 //		String s = "今天下雨= =";
 //		print(s);
@@ -43,21 +43,21 @@ public class text02 {
 //		print(num);
 		
 //		//return
-//		int calc1 = 10, calc2 = 25;
-//		System.out.println(calc1 + calc2);
+		int calc1 = 10, calc2 = 25;
+		System.out.println(calc1 + calc2);
 //		
-//		int calc3 = calc(calc1, calc2);
-//		System.out.println(calc3);
+		int calc3 = calc(calc1, calc2);
+		System.out.println(calc3);
 //		
-//		System.out.println(calc(calc1, calc2));
+		System.out.println(calc(calc1, calc2));
 		
 //		//static variable
-//		int e = 10;
-//		System.out.println(var1);
-//		test_var(e);
-//		System.out.println(var1);
-//		test_var(e);
-//		System.out.println(var1);
+		int e = 10;
+		System.out.println(var1);
+		test_var(e);
+		System.out.println(var1);
+		test_var(e);
+		System.out.println(var1);
 	}
 	
 	public static void print(String s) {

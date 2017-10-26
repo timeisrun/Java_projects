@@ -7,6 +7,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -46,14 +47,14 @@ public class text05 extends JFrame{
 //		//read file
 //		try {
 //			String str;
-//			FileReader fr=new FileReader("index.txt");
-//			BufferedReader bfr=new BufferedReader(fr);
-//
+//			File file = new File("index.txt");//HAND FUNCTION_ball_1.slk");
+//			BufferedReader bfr=new BufferedReader(new FileReader(file));
+//			
 //			while((str=bfr.readLine())!=null)
 //			{
 //				System.out.println(str);
 //			}
-//			fr.close();
+//
 //		} catch (IOException e1) {
 //			// TODO 自動產生的 catch 區塊
 //			e1.printStackTrace();
